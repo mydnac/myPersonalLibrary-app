@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "myPersonalLibrary-app"
+    }
+  },
+  "defaultProject": "myPersonalLibrary-app",
+  "cli": {
+    "analytics": "cc29b781-70a2-4590-bc47-12e7612b31c8"
+  }
 }
