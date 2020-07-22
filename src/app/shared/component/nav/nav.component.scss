@@ -1,0 +1,20 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 20px;
+  height: 100%;
+  text-align: center;
+  justify-content: space-around;
+}
+
+img {
+  height: 70px;
+}
+
+h3 {
+  color: var(--secondary-color);
+}
+
+.item {
+  cursor: pointer;
+}
