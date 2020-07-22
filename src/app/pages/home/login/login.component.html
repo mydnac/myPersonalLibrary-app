@@ -1,1 +1,18 @@
-<p>login works!</p>
+<div class="login">
+  <img class="logo" src="assets/logo.png" alt="logo MyPersonalLibrary">
+  <h1>CONNEXION</h1>
+  <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+    <div class="input-background">
+      <img class="img-input" src="assets/user.svg" alt="logo user">
+      <span></span>
+      <input class="input-id" type="text" placeholder="identifiant" [(ngModel)]="user.login">
+    </div>
+
+    <div class="input-background">
+      <img class="img-input" src="assets/padlock.svg" alt="logo padlock">
+      <span></span>
+      <input class="img-password" type="password" placeholder="mot de passe" [(ngModel)]="user.password">
+    </div>
+    <button mat-raised-button color="primary">ENTRER</button>
+  </form>
+</div>
