@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { User } from '../../../shared/models/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'mpl-login',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  users: any;
+  currentUser = { login: '', password: '' };
+  arrayUsers: any;
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+
   }
 
+
+  onSubmit() {
+    for (const user of this.users) {
+      for (const element of user) {
+        if (element.login === this.currentUser.login && element.password === this.currentUser.password) {
+          this.router.navigateByUrl('/list-books');
+        }
+      }
+    }
+  }
 }
