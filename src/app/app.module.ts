@@ -13,6 +13,10 @@ import { FormComponent } from './pages/edit-book/form/form.component';
 import { NavComponent } from './shared/component/nav/nav.component';
 import { SearchComponent } from './shared/component/search/search.component';
 import { BookComponent } from './shared/component/book/book.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +34,10 @@ import { BookComponent } from './shared/component/book/book.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
