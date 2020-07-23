@@ -9,11 +9,16 @@ import { Book } from '../../models/book';
 export class BookComponent implements OnInit {
 
   @Input()
-  books: Book[];
+  book: Book;
 
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+
+  array(n: number) {
+    return Array(n);
   }
 
 }
