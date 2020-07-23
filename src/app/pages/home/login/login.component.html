@@ -2,18 +2,20 @@
   <img class="logo" src="assets/logo.png" alt="logo MyPersonalLibrary">
   <h1>CONNEXION</h1>
   <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+    <div class="errorMessage" *ngIf="login.errors?.required && myForm.submitted">Un identifiant est requis</div>
     <div class="input-background">
       <img class="img-input" src="assets/user.svg" alt="logo user">
       <span></span>
       <input class="input-id" type="text" name="login" placeholder="identifiant" [(ngModel)]="currentUser.login"
-        required>
+        #login='ngModel' required>
     </div>
 
+    <div class="errorMessage" *ngIf="password.errors?.required && myForm.submitted">Un mot de passe est requis</div>
     <div class="input-background">
       <img class="img-input" src="assets/padlock.svg" alt="logo padlock">
       <span></span>
       <input class="img-password" type="password" name="password" placeholder="mot de passe"
-        [(ngModel)]="currentUser.password" required>
+        [(ngModel)]="currentUser.password" required #password='ngModel'>
     </div>
     <button mat-raised-button color="primary">ENTRER</button>
   </form>
