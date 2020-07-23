@@ -9,7 +9,7 @@ export class Book {
     public summary: string,
     public personalSummary: string,
     public rating: number,
-    public writer: Writer,
+    public writer?: Writer,
     public id?: string,
   ) { }
 }
