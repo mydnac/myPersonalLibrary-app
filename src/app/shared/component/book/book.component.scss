@@ -1,15 +1,16 @@
-mat-card {
+.card {
   width: 250px;
   height: 350px;
   margin: 10px;
+  cursor: pointer;
 }
 
-mat-card-title {
+.title {
   text-align: center;
   font-size: 20px;
 }
 
-img {
+.img-list {
   height: 250px;
   width: 170px;
   text-align: center;
@@ -34,4 +35,45 @@ img {
 
 .cursor {
   cursor: pointer;
+}
+
+//detail-book
+
+.img2 {
+  display: flex;
+  align-items: center;
+  margin: 0px 30px;
+
+}
+
+.card-center {
+  display: flex;
+  justify-content: center;
+}
+
+.card2 {
+  width: 900px;
+  height: 400px;
+  margin: 10px;
+  display: flex;
+  color: var(--secondary-color);
+}
+
+.img-detail {
+  height: 330px;
+  width: 230px;
+}
+
+.stars2 {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+}
+
+.elements-book {
+  margin-top: 20px;
+}
+
+.title2 {
+  font-size: 20px;
 }

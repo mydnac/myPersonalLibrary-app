@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Book } from '../../models/book';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'mpl-book',
@@ -11,9 +12,11 @@ export class BookComponent implements OnInit {
   @Input()
   book: Book;
 
+  @Input() oneBook: Book;
+
   @Output() idBook: EventEmitter<number> = new EventEmitter();
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
 
@@ -26,6 +29,11 @@ export class BookComponent implements OnInit {
   sendIdBookToDelete(idBook) {
     this.idBook.emit(idBook);
     window.location.reload();
+  }
+
+  bookToDelete(idBook) {
+    this.idBook.emit(idBook);
+    // window.location.reload();
   }
 
 }

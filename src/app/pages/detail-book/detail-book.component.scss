@@ -1,0 +1,28 @@
+.general {
+  display: flex;
+}
+
+mat-icon,
+h2 {
+  color: white;
+  font-size: 40px;
+}
+
+mat-icon {
+  padding-right: 30px;
+}
+
+.list-books {
+  margin: 25px;
+  width: 100%;
+
+}
+
+h2 {
+  font-family: 'Dancing Script', 'Roboto', cursive;
+}
+
+.back-books {
+  display: flex;
+  cursor: pointer;
+}
