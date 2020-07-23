@@ -1,1 +1,18 @@
-<p>detail-book works!</p>
+<mpl-search></mpl-search>
+<div class="general">
+  <div>
+    <mpl-nav></mpl-nav>
+  </div>
+  <div class="list-books">
+    <div class="back-books" [routerLink]="['/list-books']">
+      <div>
+        <mat-icon>arrow_back</mat-icon>
+      </div>
+      <div>
+        <h2>Mes livres</h2>
+      </div>
+    </div>
+    <div>
+      <mpl-book [oneBook]="book" (idBook)="bookToDelete($event)"></mpl-book>
+    </div>
+  </div>
