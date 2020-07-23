@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BookService } from '../../shared/services/book.service';
 
 @Component({
   selector: 'mpl-edit-book',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditBookComponent implements OnInit {
 
-  constructor() { }
+  constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
+  }
+
+  createNewBook(book) {
+    this.bookService.generateNewBook(book).subscribe(data =>
+      console.log(data));
   }
 
 }

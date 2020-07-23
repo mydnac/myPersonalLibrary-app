@@ -1,1 +1,64 @@
-<p>form works!</p>
+<div class="form">
+  <h1>Nouveau livre</h1>
+  <form (ngSubmit)="myForm.valid && onSubmit()" #myForm="ngForm">
+
+    <div class="first-flex">
+      <div>
+        <input class="input-title" type="text" name="title" placeholder="Titre livre" [(ngModel)]="book.title" required
+          #title='ngModel'>
+        <div class="errorMessage" *ngIf="title.errors?.required && myForm.submitted">Un titre est requis</div>
+      </div>
+
+      <div>
+        <input class="input-writer" type="text" name="writer" placeholder="Ecrivain">
+        <!-- <div class="errorMessage" *ngIf="writer.errors?.required && myForm.submitted">Le nom de l'écrivain est requis
+        </div> -->
+      </div>
+    </div>
+
+    <div class="second-flex">
+      <div class="reading-date">
+        <label class="label" for="date">Date de lecture</label>
+        <input class="input-date" type="date" name="date" [(ngModel)]="book.readingDate" required #date='ngModel'>
+        <div class="errorMessage" *ngIf="date.errors?.required && myForm.submitted">Une date de lecture est requise
+        </div>
+      </div>
+
+      <div class="rating">
+        <label for="rating">Note</label>
+        <select [(ngModel)]="book.rating" name="rating" id="rating" required #rating='ngModel'>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <div class="errorMessage" *ngIf="rating.errors?.required && myForm.submitted">Une note est requise</div>
+      </div>
+
+      <div>
+        <input class="input-img" type="text" name="img" [(ngModel)]="book.img"
+          placeholder="Url image page de couverture" required #img='ngModel'>
+        <div class="errorMessage" *ngIf="img.errors?.required && myForm.submitted">Une page de couverture est requise
+        </div>
+      </div>
+    </div>
+
+    <div class="input-summary">
+      <textarea rows="10" cols="100" name="summary" [(ngModel)]="book.summary" #summary='ngModel' required
+        placeholder="Résumé"></textarea>
+      <div class="errorMessage" *ngIf="summary.errors?.required && myForm.submitted">Un résumé est requis</div>
+    </div>
+
+    <div class="input-personal-summary">
+      <textarea rows="10" cols="100" name="personalSummary" [(ngModel)]="book.personalSummary"
+        #personalSummary='ngModel' required placeholder="Résumé personnel"></textarea>
+      <div class="errorMessage" *ngIf="personalSummary.errors?.required && myForm.submitted">Un résumé personnel est
+        requis</div>
+    </div>
+    <div class="button">
+      <button mat-raised-button color="primary">ENREGISTRER</button>
+    </div>
+  </form>
+
+</div>

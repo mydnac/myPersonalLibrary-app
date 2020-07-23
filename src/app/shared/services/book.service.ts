@@ -18,6 +18,10 @@ export class BookService {
     return this.http.get<Book[]>(this.URL);
   }
 
+  generateNewBook(book: Book){
+    return this.http.post(this.URL, book);
+  }
+
   deleteBook(book: Book) {
     return this.http.delete(this.URL + `/${book}`);
   }
