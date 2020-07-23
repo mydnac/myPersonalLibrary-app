@@ -1,1 +1,8 @@
-<p>books works!</p>
+<div class="books">
+  <mat-card>
+    <button [routerLink]="['/edit-book']" mat-mini-fab color="primary">+</button>
+  </mat-card>
+  <div class="flex-books" *ngFor="let book of books">
+    <mpl-book [book]="book" (idBook)="sendIdBookToDelete($event)"></mpl-book>
+  </div>
+</div>

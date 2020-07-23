@@ -1,1 +1,18 @@
-<p>book works!</p>
+<mat-card>
+  <div class="img">
+    <img mat-card-image [src]="book.img" alt="Couverture du livre">
+  </div>
+  <div class="content">
+    <mat-card-title> {{book.title}} </mat-card-title>
+    <div class="stars">
+      <div *ngFor="let item of array(book.rating); let i = index">
+        <mat-icon>stars</mat-icon>
+      </div>
+    </div>
+    <div>
+      <mat-icon class="cursor">create</mat-icon>
+      <mat-icon class="cursor" (click)="sendIdBookToDelete(book.id)">delete</mat-icon>
+    </div>
+  </div>
+
+</mat-card>

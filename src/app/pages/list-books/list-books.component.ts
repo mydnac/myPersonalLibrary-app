@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BookService } from '../../shared/services/book.service';
+import { Book } from '../../shared/models/book';
 
 @Component({
   selector: 'mpl-list-books',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListBooksComponent implements OnInit {
 
-  constructor() { }
+  books: Book[];
+
+  allBooks: any;
+
+  constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
+    this.allBooks = this.bookService.getAllBooks().subscribe(book => {
+      this.books = book;
+    });
   }
 
+  sendIdBookToDelete(idBook) {
+    this.bookService.deleteBook(idBook).subscribe();
+    this.allBooks();
+  }
 }

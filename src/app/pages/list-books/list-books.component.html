@@ -1,9 +1,10 @@
 <mpl-search></mpl-search>
-<div class="position">
+<div class="general">
   <div>
     <mpl-nav></mpl-nav>
   </div>
-  <div>
-
+  <div class="list-books">
+    <h2>Mes livres</h2>
+    <mpl-books [books]="books" (idBook)="sendIdBookToDelete($event)"></mpl-books>
   </div>
 </div>

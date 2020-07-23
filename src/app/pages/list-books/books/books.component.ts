@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Book } from '../../../shared/models/book';
 
 @Component({
   selector: 'mpl-books',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BooksComponent implements OnInit {
 
+  @Input()
+  books: Book[];
+
+  @Output() idBook: EventEmitter<number> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  sendIdBookToDelete(idBook) {
+    this.idBook.emit(idBook);
   }
 
 }
