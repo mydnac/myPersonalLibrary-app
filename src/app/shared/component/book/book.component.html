@@ -1,9 +1,9 @@
-<mat-card [routerLink]="['/detail-book', book.id]">
+<mat-card class="card" *ngIf="router.url === '/list-books'" [routerLink]="['/detail-book', book.id]">
   <div class="img">
-    <img mat-card-image [src]="book.img" alt="Couverture du livre">
+    <img class="img-list" mat-card-image [src]="book.img" alt="Couverture du livre">
   </div>
   <div class="content">
-    <mat-card-title> {{book.title}} </mat-card-title>
+    <mat-card-title class="title"> {{book.title}} </mat-card-title>
     <div class="stars">
       <div *ngFor="let item of array(book.rating); let i = index">
         <mat-icon>stars</mat-icon>
@@ -16,3 +16,43 @@
   </div>
 
 </mat-card>
+
+<div class="card-center" *ngIf="router.url !== '/list-books'">
+  <mat-card class="card2">
+
+    <div class="img2">
+      <img class="img-detail" mat-card-image [src]="oneBook.img" alt="Couverture du livre">
+    </div>
+
+    <div class="elements-book">
+      <div>
+        <mat-icon class="cursor">create</mat-icon>
+        <mat-icon class="cursor" (click)="bookToDelete(oneBook.id)">delete</mat-icon>
+      </div>
+
+      <div>
+
+        <mat-card-title class="title2"> {{oneBook.title}} </mat-card-title>
+
+        <div>Lu le {{oneBook.readingDate  | date: 'dd/MM/yyyy'}}</div>
+
+        <div class="stars2">
+          <div *ngFor="let item of array(oneBook.rating); let i = index">
+            <mat-icon>stars</mat-icon>
+          </div>
+        </div>
+
+        <mat-card-content>
+          <p>
+            Résumé : {{oneBook.summary}}
+          </p>
+          <p>
+            Résumé personnel : {{oneBook.personalSummary}}
+          </p>
+        </mat-card-content>
+
+      </div>
+
+    </div>
+  </mat-card>
+</div>
