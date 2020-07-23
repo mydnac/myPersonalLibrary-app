@@ -11,12 +11,18 @@ export class ListBooksComponent implements OnInit {
 
   books: Book[];
 
+  allBooks: any;
+
   constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
-    this.bookService.getAllBooks().subscribe(book => {
+    this.allBooks = this.bookService.getAllBooks().subscribe(book => {
       this.books = book;
     });
   }
 
+  sendIdBookToDelete(idBook) {
+    this.bookService.deleteBook(idBook).subscribe();
+    this.allBooks();
+  }
 }

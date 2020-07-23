@@ -3,6 +3,6 @@
     <button mat-mini-fab color="primary">+</button>
   </mat-card>
   <div class="flex-books" *ngFor="let book of books">
-    <mpl-book [book]="book"></mpl-book>
+    <mpl-book [book]="book" (idBook)="sendIdBookToDelete($event)"></mpl-book>
   </div>
 </div>

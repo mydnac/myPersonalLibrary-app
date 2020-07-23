@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Book } from '../../../shared/models/book';
 
 @Component({
@@ -11,9 +11,15 @@ export class BooksComponent implements OnInit {
   @Input()
   books: Book[];
 
+  @Output() idBook: EventEmitter<number> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  sendIdBookToDelete(idBook) {
+    this.idBook.emit(idBook);
   }
 
 }

@@ -5,6 +5,6 @@
   </div>
   <div class="list-books">
     <h2>Mes livres</h2>
-    <mpl-books [books]="books"></mpl-books>
+    <mpl-books [books]="books" (idBook)="sendIdBookToDelete($event)"></mpl-books>
   </div>
 </div>

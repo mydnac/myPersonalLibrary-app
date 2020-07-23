@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Book } from '../../models/book';
 
 @Component({
@@ -11,6 +11,8 @@ export class BookComponent implements OnInit {
   @Input()
   book: Book;
 
+  @Output() idBook: EventEmitter<number> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
@@ -19,6 +21,11 @@ export class BookComponent implements OnInit {
 
   array(n: number) {
     return Array(n);
+  }
+
+  sendIdBookToDelete(idBook) {
+    this.idBook.emit(idBook);
+    window.location.reload();
   }
 
 }
