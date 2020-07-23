@@ -23,6 +23,7 @@ import { LoaderComponent } from './shared/component/loader/loader.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoaderService } from './shared/services/loader.service';
 import { LoaderInterceptor } from './core/loader.interceptor';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { LoaderInterceptor } from './core/loader.interceptor';
     MatIconModule,
     MatCardModule,
     MatProgressSpinnerModule,
+    MatSnackBarModule,
     HttpClientModule,
   ],
   providers: [
