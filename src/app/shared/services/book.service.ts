@@ -26,6 +26,10 @@ export class BookService {
     return this.http.get(this.URL + `/${id}`);
   }
 
+  editBook(id, book: Book) {
+    return this.http.put(this.URL + `/${id}`, book);
+  }
+
   deleteBook(book: Book) {
     return this.http.delete(this.URL + `/${book}`);
   }

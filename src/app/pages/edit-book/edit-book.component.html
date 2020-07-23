@@ -13,6 +13,6 @@
       </div>
     </div>
     <div>
-      <mpl-form (addBook)="createNewBook($event)"></mpl-form>
+      <mpl-form [currentBook]="book" (addBook)="createNewBook($event)" (editedBook)="editBook($event)"></mpl-form>
     </div>
   </div>

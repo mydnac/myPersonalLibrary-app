@@ -6,11 +6,11 @@
     <mat-card-title class="title"> {{book.title}} </mat-card-title>
     <div class="stars">
       <div *ngFor="let item of array(book.rating); let i = index">
-        <mat-icon>stars</mat-icon>
+        <mat-icon>grade</mat-icon>
       </div>
     </div>
     <div>
-      <mat-icon class="cursor">create</mat-icon>
+      <mat-icon class="cursor" [routerLink]="['/edit-book', book.id]" (click)="bookUpdate(book)">create </mat-icon>
       <mat-icon class="cursor" (click)="sendIdBookToDelete(book.id)">delete</mat-icon>
     </div>
   </div>
@@ -26,7 +26,8 @@
 
     <div class="elements-book">
       <div>
-        <mat-icon class="cursor">create</mat-icon>
+        <mat-icon class="cursor" [routerLink]="['/edit-book', oneBook.id]" (click)="bookToUpdate(oneBook)">create
+        </mat-icon>
         <mat-icon class="cursor" (click)="bookToDelete(oneBook.id)">delete</mat-icon>
       </div>
 
@@ -38,7 +39,7 @@
 
         <div class="stars2">
           <div *ngFor="let item of array(oneBook.rating); let i = index">
-            <mat-icon>stars</mat-icon>
+            <mat-icon>grade</mat-icon>
           </div>
         </div>
 

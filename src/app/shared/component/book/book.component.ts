@@ -16,6 +16,8 @@ export class BookComponent implements OnInit {
 
   @Output() idBook: EventEmitter<number> = new EventEmitter();
 
+  @Output() currentBook: EventEmitter<Book> = new EventEmitter();
+
   constructor(public router: Router) { }
 
   ngOnInit(): void {
@@ -33,7 +35,16 @@ export class BookComponent implements OnInit {
 
   bookToDelete(idBook) {
     this.idBook.emit(idBook);
-    // window.location.reload();
   }
+
+  bookToUpdate(oneBook) {
+    this.currentBook.emit(oneBook);
+  }
+
+  bookUpdate(book) {
+    this.currentBook.emit(book);
+  }
+
+
 
 }
