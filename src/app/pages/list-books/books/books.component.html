@@ -1,1 +1,8 @@
-<p>books works!</p>
+<div class="books">
+  <mat-card>
+    <button mat-mini-fab color="primary">+</button>
+  </mat-card>
+  <div class="flex-books" *ngFor="let book of books">
+    <mpl-book [books]="books"></mpl-book>
+  </div>
+</div>

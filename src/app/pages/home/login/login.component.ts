@@ -12,7 +12,6 @@ export class LoginComponent implements OnInit {
   @Input()
   users: any;
   currentUser = { login: '', password: '' };
-  arrayUsers: any;
 
   constructor(private router: Router) { }
 

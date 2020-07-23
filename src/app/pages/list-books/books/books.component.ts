@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Book } from '../../../shared/models/book';
 
 @Component({
   selector: 'mpl-books',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./books.component.scss']
 })
 export class BooksComponent implements OnInit {
+
+  @Input()
+  books: Book[];
 
   constructor() { }
 
